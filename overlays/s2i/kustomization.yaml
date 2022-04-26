@@ -5,4 +5,3 @@ resources:
   - buildconfig.yaml
   - deployment.yaml
   - imagestream.yaml
-  - service.yaml
