@@ -22,6 +22,7 @@ spec:
     git:
       uri: https://github.com/dlbewley/static.git
     type: Git
+    contextDir: app
   strategy:
     sourceStrategy:
       from:
