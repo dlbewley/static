@@ -23,6 +23,7 @@ spec:
       uri: https://github.com/dlbewley/static.git
     type: Git
     contextDir: app
+    ref: argo
   strategy:
     sourceStrategy:
       from:
