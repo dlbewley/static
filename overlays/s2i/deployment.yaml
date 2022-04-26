@@ -1,0 +1,38 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"static:latest"},"fieldPath":"spec.template.spec.containers[?(@.name==\"static\")].image"}]'
+    openshift.io/generated-by: OpenShiftNewApp
+  creationTimestamp: null
+  labels:
+    app: static
+    app.kubernetes.io/component: static
+    app.kubernetes.io/instance: static
+  name: static
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      deployment: static
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        openshift.io/generated-by: OpenShiftNewApp
+      creationTimestamp: null
+      labels:
+        deployment: static
+    spec:
+      containers:
+      - image: ' '
+        name: static
+        ports:
+        - containerPort: 8443
+          protocol: TCP
+        - containerPort: 8080
+          protocol: TCP
+        resources: {}
+status: {}
+
