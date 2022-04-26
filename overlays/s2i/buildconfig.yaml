@@ -1,0 +1,40 @@
+---
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  annotations:
+    openshift.io/generated-by: OpenShiftNewApp
+  creationTimestamp: null
+  labels:
+    app: static
+    app.kubernetes.io/component: static
+    app.kubernetes.io/instance: static
+  name: static
+spec:
+  nodeSelector: null
+  output:
+    to:
+      kind: ImageStreamTag
+      name: static:latest
+  postCommit: {}
+  resources: {}
+  source:
+    type: Git
+    git:
+      uri: https://github.com/dlbewley/static.git
+      ref: argo
+    contextDir: app
+  strategy:
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: nginx:1.20-ubi8
+        namespace: openshift
+    type: Source
+  triggers:
+  - type: ConfigChange
+  - imageChange: {}
+    type: ImageChange
+status:
+  lastVersion: 0
+
