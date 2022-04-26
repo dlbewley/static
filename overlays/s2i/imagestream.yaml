@@ -4,7 +4,6 @@ kind: ImageStream
 metadata:
   annotations:
     openshift.io/generated-by: OpenShiftNewApp
-  creationTimestamp: null
   labels:
     app: static
     app.kubernetes.io/component: static
@@ -13,6 +12,4 @@ metadata:
 spec:
   lookupPolicy:
     local: false
-status:
-  dockerImageRepository: ""
-
+status: {}

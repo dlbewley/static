@@ -1,7 +1,6 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  creationTimestamp: null
   labels:
     app: static
     app.kubernetes.io/component: static
@@ -11,7 +10,7 @@ spec:
   port:
     targetPort: 8080-tcp
   to:
-    kind: ""
+    kind: Service
     name: static
     weight: null
 status: {}

@@ -35,6 +35,5 @@ spec:
   - type: ConfigChange
   - imageChange: {}
     type: ImageChange
-status:
-  lastVersion: 0
+status: {}
 
