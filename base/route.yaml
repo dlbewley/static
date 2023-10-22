@@ -13,4 +13,6 @@ spec:
     kind: Service
     name: static
     weight: null
+  tls:
+    termination: edge
 status: {}
